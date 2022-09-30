@@ -1,0 +1,9 @@
+.container {
+    display: block;
+    @media (min-width: 468px) {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        justify-content: space-between;
+    }
+}

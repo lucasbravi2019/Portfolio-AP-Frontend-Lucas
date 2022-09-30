@@ -1,0 +1,5 @@
+<section>
+    <img class="skeleton" [src]="imagen" *ngIf="imagen">
+    <div class="skeleton" *ngIf="!imagen"></div>
+    <h2>{{ about?.aboutMsg }}</h2>
+</section>

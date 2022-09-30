@@ -1,0 +1,19 @@
+section {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+    gap: 3rem;
+    padding: 2rem;
+    a {
+        font-weight: bold;
+        display: block;
+        margin-bottom: 2px;
+        transition: color .3s ease-in-out;
+    }
+    a:hover {
+        color: #F25764;
+        margin-bottom: 0;
+        border-bottom: 2px solid #F25764;
+    }
+}

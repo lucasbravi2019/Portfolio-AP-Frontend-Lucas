@@ -1,1 +1,50 @@
 /* You can add global styles to this file, and also import other style files */
+
+@use './normalize.scss';
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+    color: white;
+}
+
+body {
+    font-family: 'Roboto Slab', serif;
+    background: linear-gradient(to bottom right, rgb(0, 0, 0), rgb(29, 29, 29), rgb(85, 85, 85));
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.skeleton {
+    animation: skeleton-animation 0.5s linear infinite alternate;
+}
+
+@keyframes skeleton-animation {
+    0% {
+        background-color: rgba($color: #afafaf, $alpha: 1.0);
+    }
+    100% {
+        background-color: rgba($color: #ebebeb, $alpha: 1.0);
+    }
+}

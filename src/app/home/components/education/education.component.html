@@ -1,0 +1,17 @@
+<section *ngIf="educationList && educationList.length > 0">
+    <h2>Education</h2>
+    <section *ngFor="let education of educationList" class="card">
+        <div class="field">
+            <p><strong>Institute: </strong></p>
+            <p>{{ education.institute }}</p>
+        </div>
+        <div class="field">
+            <p><strong>Title: </strong></p>
+            <p>{{ education.title }}</p>
+        </div>
+        <div>
+            <time>{{ education.startDate }} - </time>
+            <time>{{ education.endDate }}</time>
+        </div>
+    </section>
+</section>

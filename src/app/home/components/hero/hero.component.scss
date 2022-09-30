@@ -1,0 +1,29 @@
+main {
+    background-image: url('../../../../assets/backImage.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 600px;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    background-color: rgba($color: #000000, $alpha: .7);
+}
+
+h1 {
+    text-align: center;
+    overflow-wrap: break-word;
+    font-size: 3rem;
+    padding: 1rem 0;
+    @media (min-width: 768px) {
+        font-size: 3.5rem;
+    }
+}

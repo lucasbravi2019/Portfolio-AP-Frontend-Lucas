@@ -1,0 +1,9 @@
+<section *ngIf="persona != null">
+    <app-hero *ngIf="persona" [persona]="personaBasica" [about]="persona.about"></app-hero>
+    <app-about [about]="persona.about"></app-about>
+    <app-job [jobList]="persona.jobList"></app-job>
+    <app-education [educationList]="persona.educationList"></app-education>
+    <app-technology [technologyList]="persona.technologyList"></app-technology>
+    <app-project [projectList]="persona.projectList"></app-project>
+    <app-contact [contactList]="persona.contactList"></app-contact>
+</section>

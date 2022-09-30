@@ -1,0 +1,11 @@
+<section *ngIf="technologyList && technologyList.length > 0">
+    <h2>Technologies</h2>
+    <section *ngFor="let technology of technologyList" class="card">
+        <div class="field">
+            <p><strong>Technology Name: </strong></p>
+            <p>{{ technology.name }}</p>
+        </div>
+        <div role="progressbar" aria-valuemin="0" aria-valuemax="100" [style]="'--value:' + technology.level"></div>
+        <img [src]="getImage(technology.image)" alt="" *ngIf="technology.image">
+    </section>
+</section>

@@ -1,0 +1,22 @@
+<section *ngIf="projectList && projectList.length > 0">
+    <h2>Projects</h2>
+    <section *ngFor="let project of projectList" class="card">
+        <div>
+            <a [href]="project.site">
+                <img [src]="getImage(project.image)" alt="">
+            </a>
+        </div>
+        <div class="field">
+            <p><strong>Project Name: </strong></p>
+            <p>{{ project.projectName }}</p>
+        </div>
+        <div class="field">
+            <p><strong>Project Description: </strong></p>
+            <p>{{ project.projectDescription }}</p>
+        </div>
+        <div class="technologies">
+            <img class="technologyImage" [src]="getImage(technology.image)" alt="" *ngFor="let technology of project.technologyList">
+        </div>
+        <a class="link" [href]="project.site">Visit</a>
+    </section>
+</section>

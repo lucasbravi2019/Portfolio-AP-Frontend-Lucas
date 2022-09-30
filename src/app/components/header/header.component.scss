@@ -1,0 +1,23 @@
+nav {
+    display: block;
+    width: 100%;
+    background-color: #1E2126;
+    section {
+        @media (min-width: 768px) {
+            width: 30%;
+        }
+    }
+    img {
+        height: 100px;
+        width: 150px;
+        object-fit: contain;
+        object-position: center;
+        display: block;
+        margin: 0 auto;
+    }
+    @media (min-width: 468px) {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
