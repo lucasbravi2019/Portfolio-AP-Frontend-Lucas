@@ -1,1 +1,27 @@
-<p>persona works!</p>
+<section>
+    <form [formGroup]="form" *ngIf="isEditing">
+        <label for="firstName">FirstName</label>
+        <input type="text" placeholder="FirstName" formControlName="firstName">
+        <label for="lastName">LastName</label>
+        <input type="text" placeholder="LastName" formControlName="lastName">
+        <button (click)="sendEdit()">Edit</button>
+        <button (click)="isEditing = false">Cancel</button>
+    </form>
+    <table *ngIf="persona">
+        <tr>
+            <th>FirstName</th>
+            <th>LastName</th>
+        </tr>
+        <tr>
+            <td>{{ persona.firstName }}</td>
+            <td>{{ persona.lastName }}</td>
+            <button (click)="editPersona()">Edit</button>
+        </tr>
+    </table>
+</section>
+<section *ngIf="edited" class="edition">
+    <p>Successfully edited!</p>
+</section>
+<section *ngIf="message" class="error">
+    <p>{{ message }}</p>
+</section>

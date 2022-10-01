@@ -1,5 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { ContactResponse } from 'src/app/interfaces/contact';
+import { Component, Input, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { ContactRequest, ContactResponse } from 'src/app/interfaces/contact';
+import { ContactService } from 'src/app/services/contact.service';
 
 @Component({
   selector: 'app-contact',
@@ -8,12 +10,42 @@ import { ContactResponse } from 'src/app/interfaces/contact';
 })
 export class ContactComponent implements OnInit {
 
+  form: FormGroup
+  isEditing: boolean = false
+  isCreating: boolean = false
+  message: string | null = null
+  edited: boolean = false
+  created: boolean = false
+
   @Input() contactList?: ContactResponse[]
 
-  constructor() { }
+  constructor(private contactService: ContactService, private fb: FormBuilder) { 
+    this.form = this.fb.group<ContactRequest>({
+      id: 0,
+      contactType: '',
+      contactValue: '',
+      personaId: 0
+    })
+  }
 
   ngOnInit(): void {
     console.table(this.contactList)
+  }
+
+  editContact(contact: ContactResponse) {
+
+  }
+
+  deleteContact(id: number) {
+
+  }
+
+  sendEdit() {
+
+  }
+
+  sendCreation() {
+    
   }
 
 }

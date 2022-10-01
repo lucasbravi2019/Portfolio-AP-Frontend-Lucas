@@ -5,5 +5,6 @@ export enum Rutas {
     EDUCATION = 'http://localhost:8080/api/v1/education',
     JOB = 'http://localhost:8080/api/v1/job',
     PROJECT = 'http://localhost:8080/api/v1/project',
-    TECHNOLOGY = 'http://localhost:8080/api/v1/technology'
+    TECHNOLOGY = 'http://localhost:8080/api/v1/technology',
+    LOGIN = 'http://localhost:8080/api/v1/login'
 }

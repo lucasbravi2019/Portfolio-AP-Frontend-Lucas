@@ -32,6 +32,10 @@ export class AdminComponent implements OnInit {
     })
   }
 
+  reload() {
+    this.getPersona()
+  }
+
   get persona(): PersonaResponse | undefined {
     return this._persona
   }

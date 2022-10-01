@@ -1,8 +1,8 @@
 <h1>Login</h1>
-<form>
+<form [formGroup]="form">
     <fieldset>
-        <input type="text" placeholder="Username">
-        <input type="password" placeholder="Password">
+        <input type="text" placeholder="Username" formControlName="username">
+        <input type="password" placeholder="Password" formControlName="password">
     </fieldset>
     <button (click)="login()">Login</button>
 </form>

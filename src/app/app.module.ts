@@ -10,6 +10,7 @@ import { LoginModule } from './login/login.module';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { FooterComponent } from './components/footer/footer.component';
     HttpClientModule,
     HomeModule,
     LoginModule, 
-    AdminModule
+    AdminModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Rutas } from '../enum/rutas';
 import { PersonaRequest, PersonaResponse } from '../interfaces/persona';
 import { LoginService } from './login.service';
+import { FormGroup } from '@angular/forms'
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +20,7 @@ export class PersonaService {
     return this.http.get<PersonaResponse>(Rutas.PERSONA)
   }
 
-  editPersona(persona: PersonaRequest): Observable<PersonaRequest> {
+  editPersona(persona: FormGroup): Observable<PersonaResponse> {
     return this.http.put<PersonaResponse>(Rutas.PERSONA, persona, {
       headers: this.header
     })

@@ -3,7 +3,7 @@
     <section *ngFor="let contact of contactList" class="card">
         <div class="field">
             <p><strong>{{ contact.contactType }}:</strong></p>
-            <a [href]="'//////' + contact.contactValue" target="_blank" rel="noopener noreferrer" *ngIf="isUrl(contact.contactValue)">Visit</a>
+            <a [href]="getUrl(contact.contactValue)" target="_blank" rel="noopener noreferrer" *ngIf="isUrl(contact.contactValue)">Visit</a>
             <a [href]="'mailto:' + contact.contactValue" *ngIf="isMail(contact.contactValue)">Send Email</a>
             <a [href]="'tel:' + contact.contactValue" *ngIf="isTel(contact.contactValue)">Call</a>
         </div>

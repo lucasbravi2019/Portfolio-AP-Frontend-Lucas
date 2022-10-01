@@ -4,9 +4,13 @@ form {
     @media (min-width: 768px) {
         width: 60%;
     }
+    @media (min-width: 992px) {
+        width: 30%;
+    }
 }
 
 input {
+    width: 100%;
     display: block;
     padding: .3rem;
     margin: .5rem auto;

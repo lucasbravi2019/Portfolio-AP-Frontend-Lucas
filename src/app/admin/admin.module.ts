@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
 import { AdminComponent } from './admin.component';
 import { PersonaComponent } from './components/persona/persona.component';
 import { AboutComponent } from './components/about/about.component';
@@ -23,7 +24,8 @@ import { TechnologyComponent } from './components/technology/technology.componen
     TechnologyComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    ReactiveFormsModule
   ]
 })
 export class AdminModule { }

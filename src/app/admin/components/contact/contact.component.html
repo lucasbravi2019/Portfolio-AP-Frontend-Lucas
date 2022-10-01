@@ -1,1 +1,32 @@
-<p>contact works!</p>
+<section>
+    <form [formGroup]="form" *ngIf="isEditing || isCreating">
+        <label for="contactType">Contact Type</label>
+        <input type="text" placeholder="Facebook" formControlName="contactType">
+        <label for="contactValue">Contact Value</label>
+        <input type="text" placeholder="www.facebook.com" formControlName="contactValue">
+        <button (click)="sendEdit()" *ngIf="isEditing">Edit</button>
+        <button (click)="sendCreation()" *ngIf="isCreating">Create</button>
+        <button (click)="isEditing = false; isCreating = false">Cancel</button>
+    </form>
+    <table *ngIf="contactList && contactList.length > 0">
+        <tr>
+            <th>Contact Type</th>
+            <th>Contact Value</th>
+        </tr>
+        <tr *ngFor="let contact of contactList">
+            <td>{{ contact.contactType }}</td>
+            <td>{{ contact.contactValue }}</td>
+            <button (click)="editContact(contact)">Edit</button>
+            <button (click)="deleteContact(contact.id)">Delete</button>
+        </tr>
+    </table>
+</section>
+<section *ngIf="edited" class="edition">
+    <p>Successfully edited!</p>
+</section>
+<section *ngIf="created" class="creation">
+    <p>Successfully created!</p>
+</section>
+<section *ngIf="message" class="error">
+    <p>{{ message }}</p>
+</section>

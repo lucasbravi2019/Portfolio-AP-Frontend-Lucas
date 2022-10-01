@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder } from '@angular/forms';
+import { LoginRequest } from 'src/app/interfaces/login';
+import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-login-form',
@@ -7,13 +10,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginFormComponent implements OnInit {
 
-  constructor() { }
+  form: FormGroup
+
+  constructor(private service: LoginService, private fb: FormBuilder) { 
+    this.form = this.fb.group<LoginRequest>({
+      username: '',
+      password: ''
+    })
+  }
 
   ngOnInit(): void {
   }
 
   login() {
-    console.log('logeando...')
+    this.service.login(this.form)
   }
 
 }
