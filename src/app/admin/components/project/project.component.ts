@@ -42,11 +42,9 @@ export class ProjectComponent implements OnInit {
   }
 
   createProject() {
-    console.log(this.isCreating)
     this.form.reset()
     this.isCreating = true
     this.isEditing = false
-    console.log(this.isCreating)
     this.form.patchValue({
       personaId: this.personaId
     })

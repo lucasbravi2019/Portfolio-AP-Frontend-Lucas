@@ -22,14 +22,14 @@ export class TechnologyService {
     })
   }
 
-  updateTechnology(project: FormData): Observable<TechnologyResponse> {
-    return this.http.put<TechnologyResponse>(Rutas.PROJECT, project, {
+  updateTechnology(technology: FormData): Observable<TechnologyResponse> {
+    return this.http.put<TechnologyResponse>(Rutas.TECHNOLOGY, technology, {
       headers: this.header
     })
   }
 
   deleteTechnology(id: number): Observable<void> {
-    return this.http.delete<void>(`${Rutas.PROJECT}/${id}`, {
+    return this.http.delete<void>(`${Rutas.TECHNOLOGY}/${id}`, {
       headers: this.header
     })
   }

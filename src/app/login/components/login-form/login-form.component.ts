@@ -1,6 +1,8 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
-import { LoginRequest } from 'src/app/interfaces/login';
+import { Router } from '@angular/router';
+import { LoginRequest, LoginResponse } from 'src/app/interfaces/login';
 import { LoginService } from 'src/app/services/login.service';
 
 @Component({
@@ -11,8 +13,9 @@ import { LoginService } from 'src/app/services/login.service';
 export class LoginFormComponent implements OnInit {
 
   form: FormGroup
+  message: string | null = null
 
-  constructor(private service: LoginService, private fb: FormBuilder) { 
+  constructor(private service: LoginService, private fb: FormBuilder, private router: Router) { 
     this.form = this.fb.group<LoginRequest>({
       username: '',
       password: ''
@@ -23,7 +26,22 @@ export class LoginFormComponent implements OnInit {
   }
 
   login() {
-    this.service.login(this.form.value)
+    this.service.login(this.form.value).subscribe({
+      next: (data: LoginResponse) => {
+        localStorage.setItem('token', `Bearer ${data.token}`)
+      },
+      error: (error: HttpErrorResponse) => {
+        this.message = 'Login Failed'
+        setTimeout(() => {
+          this.message = null
+        }, 3000);
+      },
+      complete: () => {
+        this.router.navigate(['admin'])
+      }
+    })
+    
+    console.log(this.message);
   }
 
 }

@@ -6,3 +6,6 @@
     </fieldset>
     <button (click)="login()">Login</button>
 </form>
+<section *ngIf="message" class="error">
+    <p>{{ message }}</p>
+</section>

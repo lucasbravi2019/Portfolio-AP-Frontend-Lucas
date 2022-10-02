@@ -13,18 +13,8 @@ export class LoginService {
 
   constructor(private http: HttpClient, private router: Router) { }
 
-  login(request: FormGroup): void {
-    this.http.post<LoginResponse>(Rutas.LOGIN, request).subscribe({
-      next: (data: LoginResponse) => {
-        localStorage.setItem('token', `Bearer ${data.token}`)
-      },
-      error: (error: HttpErrorResponse) => {
-        console.error(error);
-      },
-      complete: () => {
-        this.router.navigate(['admin'])
-      }
-    })
+  login(request: FormGroup): Observable<LoginResponse> {
+    return this.http.post<LoginResponse>(Rutas.LOGIN, request)
   }
 
   deslogear() {

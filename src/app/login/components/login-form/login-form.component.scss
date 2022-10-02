@@ -42,3 +42,33 @@ button:hover {
     color: #F25764;
     border-bottom: 2px solid #F25764;
 }
+
+.error {
+    padding: .5rem;
+    text-align: center;
+    background-color: rgb(29, 29, 29);
+    position: fixed;
+    top: 0;
+    right: 0;
+    border: 2px solid red;
+    p {
+        color: rgb(255, 138, 138);
+    }
+    @media (min-width: 768px) {
+        width: 30%;
+    }
+    @media (min-width: 992px) {
+        width: 25%;
+    }
+    animation: dissapear 3s linear;
+}
+
+@keyframes dissapear {
+    0%,
+    60% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}

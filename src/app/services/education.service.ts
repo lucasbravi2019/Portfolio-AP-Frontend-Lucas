@@ -22,7 +22,7 @@ export class EducationService {
   }
 
   editEducation(education: EducationRequest): Observable<EducationResponse> {
-    return this.http.post<EducationResponse>(Rutas.EDUCATION, education, {  
+    return this.http.put<EducationResponse>(Rutas.EDUCATION, education, {  
       headers: this.header 
     })
   }
