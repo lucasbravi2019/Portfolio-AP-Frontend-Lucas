@@ -39,7 +39,6 @@ export class ProjectComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.table(this.projectList)
   }
 
   createProject() {
@@ -55,7 +54,7 @@ export class ProjectComponent implements OnInit {
 
   editProject(project: ProjectResponse) {
     this.form.reset()
-    if (this.isCreating) this.isCreating = false
+    this.isCreating = false
     this.isEditing = true
     this.form.patchValue({
       id: project.id,

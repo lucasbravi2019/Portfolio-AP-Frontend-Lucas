@@ -27,7 +27,6 @@ export class AdminComponent implements OnInit {
     this.personaService.getPersona().subscribe({
       next: (data: PersonaResponse) => {
         this._persona = data
-        console.table(this._persona)
       }
     })
   }

@@ -35,7 +35,6 @@ export class TechnologyComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.table(this.technologyList)
   }
 
   getImage(image: any) {

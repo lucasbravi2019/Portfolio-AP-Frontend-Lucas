@@ -37,7 +37,6 @@ export class EducationComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.table(this.educationList)
   }
 
   disableEndDate() {
@@ -50,6 +49,7 @@ export class EducationComponent implements OnInit {
 
   createEducation() {
     this.form.reset()
+    this.isEditing = false
     this.isCreating = true
     this.form.patchValue({
       personaId: this.personaId
@@ -58,6 +58,7 @@ export class EducationComponent implements OnInit {
 
   editEducation(education: EducationResponse) {
     this.form.reset()
+    this.isCreating = false
     this.isEditing = true
     this.form.patchValue({
       id: education.id,

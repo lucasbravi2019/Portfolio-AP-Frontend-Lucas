@@ -13,7 +13,6 @@ export class ProjectComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.table(this.projectList)
   }
 
   getImage(image: any) {
@@ -21,7 +20,7 @@ export class ProjectComponent implements OnInit {
   }
 
   getUrl(site: string) {
-    if (!site.includes('http://') || !site.includes('https://')) {
+    if (!site.includes('http://') && !site.includes('https://')) {
       return `https://${site}`
     }
     return site

@@ -13,7 +13,6 @@ export class ContactComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.table(this.contactList)
   }
   
   isUrl(contact: string) {

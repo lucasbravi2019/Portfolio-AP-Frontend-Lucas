@@ -13,7 +13,6 @@ export class JobComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.table(this.jobList)
   }
 
 }

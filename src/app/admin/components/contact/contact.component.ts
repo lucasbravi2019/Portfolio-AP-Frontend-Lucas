@@ -34,11 +34,11 @@ export class ContactComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.table(this.contactList)
   }
 
   createContact() {
     this.form.reset()
+    this.isEditing = false
     this.isCreating = true
     this.form.patchValue({
       personaId: this.personaId
@@ -46,6 +46,7 @@ export class ContactComponent implements OnInit {
   }
 
   editContact(contact: ContactResponse) {
+    this.isCreating = false
     this.isEditing = true
     this.form.patchValue({
       id: contact.id,

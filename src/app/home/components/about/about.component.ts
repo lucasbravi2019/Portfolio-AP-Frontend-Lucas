@@ -13,7 +13,6 @@ export class AboutComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.table(this.about);
   }
 
   get imagen() {

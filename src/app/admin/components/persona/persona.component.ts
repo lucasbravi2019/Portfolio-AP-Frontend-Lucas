@@ -29,7 +29,6 @@ export class PersonaComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.table(this.persona)
   }
 
   editPersona() {

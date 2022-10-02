@@ -15,7 +15,9 @@
             <p>{{ project.projectDescription }}</p>
         </div>
         <div class="technologies">
-            <img class="technologyImage" [src]="getImage(technology.image)" alt="" *ngFor="let technology of project.technologyList">
+            <div *ngFor="let technology of project.technologyList">
+                <img class="technologyImage" [src]="getImage(technology.image)" alt="" *ngIf="technology.image">
+            </div>
         </div>
         <a class="link" [href]="getUrl(project.site)">Visit</a>
     </section>

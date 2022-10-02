@@ -13,6 +13,5 @@ export class EducationComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.table(this.educationList)
   }
 }

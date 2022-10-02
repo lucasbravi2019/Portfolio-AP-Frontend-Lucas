@@ -38,7 +38,6 @@ export class JobComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.table(this.jobList)
   }
 
   disableEndDate() {
@@ -51,6 +50,7 @@ export class JobComponent implements OnInit {
 
   createJob() {
     this.form.reset()
+    this.isEditing = false
     this.isCreating = true
     this.form.patchValue({
       personaId: this.personaId
@@ -59,6 +59,7 @@ export class JobComponent implements OnInit {
 
   editJob(job: JobResponse) {
     this.form.reset()
+    this.isCreating = false
     this.isEditing = true
     this.form.patchValue({
       id: job.id,

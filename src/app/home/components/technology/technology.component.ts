@@ -13,15 +13,10 @@ export class TechnologyComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.table(this.technologyList)
   }
 
   getImage(image: any) {
     return 'data:image/jpeg;base64,' + image
-  }
-
-  getTechnologyLevel(level: number) {
-    return null
   }
 
 }
