@@ -52,7 +52,7 @@ export class PersonaComponent implements OnInit {
         if (error.status === 403) {
           this.loginService.deslogear()
         }
-        this.message = error.message
+        this.message = 'Edition failed. Please try again later.'
         setTimeout(() => {
           this.message = null
         }, 3000);

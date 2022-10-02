@@ -82,7 +82,7 @@ export class EducationComponent implements OnInit {
         if (error.status === 403) {
           this.loginService.deslogear()
         }
-        this.message = error.message
+        this.message = 'Deletion failed. Please try again later.'
         setTimeout(() => {
           this.message = null 
         }, 3000);
@@ -105,7 +105,7 @@ export class EducationComponent implements OnInit {
         if (error.status === 403) {
           this.loginService.deslogear()
         }
-        this.message = error.message
+        this.message = 'Edition failed. Please try again later.'
         setTimeout(() => {
           this.message = null
         }, 3000);
@@ -129,7 +129,7 @@ export class EducationComponent implements OnInit {
         if (error.status === 403) {
           this.loginService.deslogear()
         }
-        this.message = error.message
+        this.message = 'Creation failed. Please try again later.'
         this.isCreating = false
         setTimeout(() => {
           this.message = null
