@@ -48,3 +48,12 @@ a {
         background-color: rgba($color: #ebebeb, $alpha: 1.0);
     }
 }
+
+section {
+    overflow-x: auto;
+}
+
+th,
+td {
+    padding: 1rem .3rem;
+}

@@ -27,8 +27,19 @@ export class LoginService {
     })
   }
 
+  deslogear() {
+    localStorage.removeItem('token')
+    this.router.navigate(['login'])
+  }
+
+  checkisLogged() {
+    if (!localStorage.getItem('token')) {
+      this.router.navigate(['login'])
+    }
+  }
+
   get header() {
-      if (!this.token) this.router.navigate(['admin'])
+      if (!this.token) this.router.navigate(['login'])
       return new HttpHeaders().append('Authorization', this.token)
   }
 

@@ -1,1 +1,56 @@
-<p>job works!</p>
+<section>
+    <h3>Jobs: {{ jobList?.length }}</h3>
+    <button (click)="createJob()">Create Job</button>
+    <form [formGroup]="form" *ngIf="isEditing || isCreating">
+        <label for="companyName">Company Name</label>
+        <input type="text" placeholder="Company Name" formControlName="companyName">
+        <label for="jobTitle">Job Title</label>
+        <input type="text" placeholder="Job Title" formControlName="jobTitle">
+        <label for="jobRole">Job Role</label>
+        <input type="text" placeholder="Job Role" formControlName="jobRole">
+        <label for="startDate">Start Date</label>
+        <input type="date" formControlName="startDate">
+        <label for="endDate">End Date</label>
+        <input type="date" formControlName="endDate">
+        <label for="isPresent">Is Present</label>
+        <div class="checkbox">
+            <input id="isPresent" type="checkbox" formControlName="isPresent" (change)="disableEndDate()">
+            <label for="isPresent"></label>
+        </div>
+        <button (click)="sendEdit()" *ngIf="isEditing">Edit</button>
+        <button (click)="sendCreation()" *ngIf="isCreating">Create</button>
+        <button (click)="isEditing = false; isCreating = false">Cancel</button>
+    </form>
+    <table *ngIf="jobList && jobList.length > 0">
+        <tr>
+            <th>Company Name</th>
+            <th>Job Role</th>
+            <th>Job Title</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+        </tr>
+        <tr *ngFor="let job of jobList">
+            <td>{{ job.companyName }}</td>
+            <td>{{ job.jobRole }}</td>
+            <td>{{ job.jobTitle }}</td>
+            <td>{{ job.startDate }}</td>
+            <td>{{ job.endDate }}</td>
+            <td>
+                <button (click)="editJob(job)">Edit</button>
+                <button (click)="deleteJob(job.id)">Delete</button>
+            </td>
+        </tr>
+    </table>
+</section>
+<section *ngIf="edited" class="success">
+    <p>Successfully edited!</p>
+</section>
+<section *ngIf="created" class="success">
+    <p>Successfully created!</p>
+</section>
+<section *ngIf="deleted" class="success">
+    <p>Successfully deleted!</p>
+</section>
+<section *ngIf="message" class="error">
+    <p>{{ message }}</p>
+</section>

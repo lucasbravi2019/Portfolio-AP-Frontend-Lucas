@@ -1,4 +1,5 @@
 <section>
+    <h3>Persona</h3>
     <form [formGroup]="form" *ngIf="isEditing">
         <label for="firstName">FirstName</label>
         <input type="text" placeholder="FirstName" formControlName="firstName">
@@ -15,11 +16,11 @@
         <tr>
             <td>{{ persona.firstName }}</td>
             <td>{{ persona.lastName }}</td>
-            <button (click)="editPersona()">Edit</button>
+            <td><button (click)="editPersona()">Edit</button></td>
         </tr>
     </table>
 </section>
-<section *ngIf="edited" class="edition">
+<section *ngIf="edited" class="success">
     <p>Successfully edited!</p>
 </section>
 <section *ngIf="message" class="error">

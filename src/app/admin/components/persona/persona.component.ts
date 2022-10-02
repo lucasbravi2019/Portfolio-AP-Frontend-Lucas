@@ -2,6 +2,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { PersonaBasica, PersonaRequest, PersonaResponse } from 'src/app/interfaces/persona';
+import { LoginService } from 'src/app/services/login.service';
 import { PersonaService } from 'src/app/services/persona.service';
 
 @Component({
@@ -15,11 +16,11 @@ export class PersonaComponent implements OnInit {
   form: FormGroup
   message: string | null = null
   edited: boolean = false
-  @Input() persona?: PersonaBasica 
 
+  @Input() persona?: PersonaBasica 
   @Output() updatePersona = new EventEmitter<void>()
  
-  constructor(private personaService: PersonaService, private fb: FormBuilder) { 
+  constructor(private personaService: PersonaService, private fb: FormBuilder, private loginService: LoginService) { 
     this.form = this.fb.group<PersonaRequest>({
       firstName: this.persona?.firstName || '',
       lastName: this.persona?.lastName || '',
@@ -47,9 +48,11 @@ export class PersonaComponent implements OnInit {
         setTimeout(() => {
           this.edited = false
         }, 3000);
-        this.persona = {...data}
       },
       error: (error: HttpErrorResponse) => {
+        if (error.status === 403) {
+          this.loginService.deslogear()
+        }
         this.message = error.message
         setTimeout(() => {
           this.message = null

@@ -52,3 +52,35 @@ a:hover {
     margin-bottom: 0;
     border-bottom: 2px solid #F25764;
 }
+
+a.github {
+    margin-bottom: 0;
+    border-bottom: none;
+    transition: transform .3s ease-in-out;
+}
+
+a.github:hover {
+    transform: scale(1.1);
+}
+
+img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    margin: 1rem auto;
+    border-radius: 50%;
+}
+
+@keyframes rotateImg {
+    25% {
+        rotate: -45deg;
+    }
+    75% {
+        rotate: 45deg;
+    }
+    100% {
+        rotate: 0deg;
+    }
+}

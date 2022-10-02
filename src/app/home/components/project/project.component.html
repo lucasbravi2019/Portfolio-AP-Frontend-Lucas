@@ -17,6 +17,6 @@
         <div class="technologies">
             <img class="technologyImage" [src]="getImage(technology.image)" alt="" *ngFor="let technology of project.technologyList">
         </div>
-        <a class="link" [href]="project.site">Visit</a>
+        <a class="link" [href]="getUrl(project.site)">Visit</a>
     </section>
 </section>

@@ -1,4 +1,5 @@
 <section>
-    <a href="admin">Admin Page</a>
-    <a href="login">Login</a>
+    <a href="admin" *ngIf="isLogged">Admin Page</a>
+    <button *ngIf="isLogged" (click)="logout()">Logout</button>
+    <a href="login" *ngIf="!isLogged">Login</a>
 </section>

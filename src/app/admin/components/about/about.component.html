@@ -1,3 +1,28 @@
 <section>
-
+    <h3>About</h3>
+    <form [formGroup]="form" *ngIf="isEditing">
+        <label for="aboutMsg">About Message</label>
+        <input type="text" placeholder="Fullstack Web Developer" formControlName="aboutMsg">
+        <label for="image">Image</label>
+        <input type="file" (change)="uploadFile($event)">
+        <button (click)="sendEdit()">Edit</button>
+        <button (click)="isEditing = false">Cancel</button>
+    </form>
+    <table *ngIf="about">
+        <tr>
+            <th>About Message</th>
+            <th>Image</th>
+        </tr>
+        <tr>
+            <td>{{ about.aboutMsg }}</td>
+            <td><img [src]="getImage(about.image)" alt="" *ngIf="about.image"></td>
+            <td><button (click)="editAbout()">Edit</button></td>
+        </tr>
+    </table>
+</section>
+<section *ngIf="edited" class="success">
+    <p>Successfully edited!</p>
+</section>
+<section *ngIf="message" class="error">
+    <p>{{ message }}</p>
 </section>

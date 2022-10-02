@@ -16,7 +16,7 @@ export class AboutService {
     this.header = loginService.header
   }
 
-  editAbout(about: AboutRequest): Observable<AboutResponse> { 
+  editAbout(about: FormData): Observable<AboutResponse> { 
     return this.http.put<AboutResponse>(Rutas.ABOUT, about, {
       headers: this.header
     })

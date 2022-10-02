@@ -1,3 +1,18 @@
+h3 {
+    padding: 1rem;
+    text-align: center;
+    display: block;
+}
+
+form {
+    border: 2px outset white;
+    outline: 4px inset gray;
+    outline-offset: -12px;
+    padding: 2rem;
+    width: 90%;
+    margin: 1rem auto;
+}
+
 section {
     margin: 1rem auto;
 }
@@ -17,7 +32,7 @@ td {
     color: white;
 }
 
-.edition {
+.success {
     padding: .5rem;
     background-color: rgb(29, 29, 29);
     position: fixed;
@@ -91,6 +106,7 @@ label {
 }
 
 input {
+    padding: .3rem;
     display: block;
     margin: .5rem auto;
 }

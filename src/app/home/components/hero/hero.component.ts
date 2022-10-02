@@ -15,7 +15,6 @@ export class HeroComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.table(this.persona);
   }
 
   get name(): string {

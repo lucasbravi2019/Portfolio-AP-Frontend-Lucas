@@ -1,9 +1,23 @@
+h3 {
+    padding: 1rem;
+    text-align: center;
+}
+
 section {
     margin: 1rem auto;
 }
 
+form {
+    border: 2px outset white;
+    outline: 4px inset gray;
+    outline-offset: -12px;
+    padding: 2rem;
+    width: 90%;
+    margin: 1rem auto;
+}
+
 table {
-    margin: 0 auto;
+    margin: 1rem auto;
     width: 90%;
     text-align: center;
     border: 2px outset white;
@@ -17,7 +31,7 @@ td {
     color: white;
 }
 
-.edition {
+.success {
     padding: .5rem;
     background-color: rgb(29, 29, 29);
     position: fixed;
@@ -92,5 +106,6 @@ label {
 
 input {
     display: block;
+    padding: .3rem;
     margin: .5rem auto;
 }

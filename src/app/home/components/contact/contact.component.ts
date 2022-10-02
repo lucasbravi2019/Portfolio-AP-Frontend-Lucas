@@ -35,4 +35,8 @@ export class ContactComponent implements OnInit {
     return contact;
   }
 
+  isGithub(contact: string) {
+    return contact.includes('github') && contact.includes('.com')
+  }
+
 }

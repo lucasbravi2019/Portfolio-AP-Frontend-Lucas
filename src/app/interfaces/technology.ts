@@ -3,6 +3,7 @@ export interface TechnologyRequest {
     name: string
     level: number
     personaId: number
+    image: any
 }
 
 export interface TechnologyResponse {

@@ -11,16 +11,16 @@ import { FormGroup } from '@angular/forms'
 })
 export class PersonaService {
 
-  header: HttpHeaders
+  header: HttpHeaders | null = null
   constructor(private http: HttpClient, private loginService: LoginService) { 
-    this.header = loginService.header
   }
-
+  
   getPersona(): Observable<PersonaResponse> {
     return this.http.get<PersonaResponse>(Rutas.PERSONA)
   }
-
+  
   editPersona(persona: FormGroup): Observable<PersonaResponse> {
+    this.header = this.loginService.header
     return this.http.put<PersonaResponse>(Rutas.PERSONA, persona, {
       headers: this.header
     })

@@ -1,7 +1,8 @@
 <app-persona [persona]="personaBasica" (updatePersona)="reload()"></app-persona>
-<app-about [about]="about"></app-about>
-<app-contact [contactList]="contactList"></app-contact>
-<app-education [educationList]="educationList"></app-education>
-<app-job [jobList]="jobList"></app-job>
-<app-project [projectList]="projectList"></app-project>
-<app-technology [technologyList]="technologyList"></app-technology>
+<app-about [about]="about" [personaId]="persona?.id" (updatePersona)="reload()"></app-about>
+<app-contact [contactList]="contactList" [personaId]="persona?.id" (updatePersona)="reload()"></app-contact>
+<app-education [educationList]="educationList" [personaId]="persona?.id" (updatePersona)="reload()"></app-education>
+<app-job [jobList]="jobList" [personaId]="persona?.id" (updatePersona)="reload()"></app-job>
+<app-technology [technologyList]="technologyList" [personaId]="persona?.id" (updatePersona)="reload()"></app-technology>
+<app-project [projectList]="projectList" [personaId]="persona?.id" [technologyList]="persona?.technologyList" (updatePersona)="reload()">
+</app-project>

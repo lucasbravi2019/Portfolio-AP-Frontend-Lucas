@@ -1,0 +1,182 @@
+h3 {
+    padding: 1rem;
+    text-align: center;
+    display: block;
+}
+
+form {
+    border: 2px outset white;
+    outline: 4px inset gray;
+    outline-offset: -12px;
+    padding: 2rem;
+    width: 90%;
+    margin: 1rem auto;
+}
+
+section {
+    margin: 1rem auto;
+}
+
+table {
+    margin: 0 auto;
+    width: 90%;
+    text-align: center;
+    border: 2px outset white;
+    outline: 4px inset gray;
+    outline-offset: -12px;
+    padding: 1rem;
+}
+
+th,
+td {
+    color: white;
+}
+
+.success {
+    padding: .5rem;
+    background-color: rgb(29, 29, 29);
+    position: fixed;
+    top: 0;
+    right: 0;
+    border: 2px solid green;
+    p {
+        color: rgb(0, 211, 0);
+        text-align: center;
+    }
+    @media (min-width: 768px) {
+        width: 30%;
+    }
+    @media (min-width: 992px) {
+        width: 25%;
+    }
+    animation: dissapear 3s linear;
+}
+
+.error {
+    padding: .5rem;
+    text-align: center;
+    background-color: rgb(29, 29, 29);
+    position: fixed;
+    top: 0;
+    right: 0;
+    border: 2px solid red;
+    p {
+        color: rgb(255, 138, 138);
+    }
+    @media (min-width: 768px) {
+        width: 30%;
+    }
+    @media (min-width: 992px) {
+        width: 25%;
+    }
+    animation: dissapear 3s linear;
+}
+
+@keyframes dissapear {
+    0%,
+    60% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+button {
+    background-color: inherit;
+    width: max-content;
+    color: white;
+    padding: .5rem;
+    border: none;
+    transition: color .3s ease-in-out;
+    display: block;
+    margin: .3rem auto;
+}
+
+button:hover {
+    cursor: pointer;
+    color: #F25764;
+}
+
+label {
+    color: white;
+    display: block;
+    text-align: center;
+    margin: .5rem auto;
+}
+
+input {
+    padding: .3rem;
+    display: block;
+    margin: .5rem auto;
+}
+
+.checkbox {
+    width: 28px;
+    height: 28px;
+    position: relative;
+    margin: 20px auto;
+    background: #fcfff4;
+    background: linear-gradient(to top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+    box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0, 0, 0, 0.5);
+    label {
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+        position: absolute;
+        left: 4px;
+        top: -4px;
+        background: linear-gradient(to top, #222 0%, #45484d 100%);
+        box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.5), 0px 1px 0px rgba(255, 255, 255, 1);
+        &:after {
+            content: '';
+            width: 9px;
+            height: 5px;
+            position: absolute;
+            top: 7px;
+            left: 6px;
+            border: 3px solid #fcfff4;
+            border-top: none;
+            border-right: none;
+            background: transparent;
+            opacity: 0;
+            transform: rotate(-45deg);
+        }
+        &:hover::after {
+            opacity: 0.3;
+        }
+    }
+    input[type=checkbox] {
+        visibility: hidden;
+        &:checked+label:after {
+            opacity: 1;
+        }
+    }
+}
+
+.technologies {
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    width: max-content;
+    margin: 1rem auto;
+    p {
+        cursor: pointer;
+        margin: 1rem;
+        padding: 1rem;
+        border: 2px outset white;
+        outline: 4px inset gray;
+        outline-offset: -12px;
+    }
+}
+
+input[type=file] {
+    color: white;
+}
+
+img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    object-position: center;
+}

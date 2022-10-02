@@ -2,13 +2,13 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Rutas } from '../enum/rutas';
-import { ProjectRequest, ProjectResponse } from '../interfaces/project';
+import { TechnologyRequest, TechnologyResponse } from '../interfaces/technology';
 import { LoginService } from './login.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ProjectService {
+export class TechnologyService {
 
   header: HttpHeaders
 
@@ -16,19 +16,19 @@ export class ProjectService {
     this.header = loginService.header
   }
 
-  createProject(project: FormData): Observable<ProjectResponse> {
-    return this.http.post<ProjectResponse>(Rutas.PROJECT, project, {
+  createTechnology(technology: FormData): Observable<TechnologyResponse> {
+    return this.http.post<TechnologyResponse>(Rutas.TECHNOLOGY, technology, {
       headers: this.header
     })
   }
 
-  updateProject(project: FormData): Observable<ProjectResponse> {
-    return this.http.put<ProjectResponse>(Rutas.PROJECT, project, {
+  updateTechnology(project: FormData): Observable<TechnologyResponse> {
+    return this.http.put<TechnologyResponse>(Rutas.PROJECT, project, {
       headers: this.header
     })
   }
 
-  deleteProject(id: number): Observable<void> {
+  deleteTechnology(id: number): Observable<void> {
     return this.http.delete<void>(`${Rutas.PROJECT}/${id}`, {
       headers: this.header
     })

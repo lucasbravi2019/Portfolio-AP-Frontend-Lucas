@@ -17,3 +17,20 @@ section {
         border-bottom: 2px solid #F25764;
     }
 }
+
+button {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 2px;
+    cursor: pointer;
+    transition: color .3s ease-in-out;
+    background-color: inherit;
+    color: white;
+    border: none;
+}
+
+button:hover {
+    color: #F25764;
+    margin-bottom: 0;
+    border-bottom: 2px solid #F25764;
+}

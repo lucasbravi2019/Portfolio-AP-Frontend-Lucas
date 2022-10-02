@@ -1,6 +1,7 @@
 <main>
     <section>
-        <h1>{{ name }} </h1>
-        <h1>{{ title }} </h1>
+        <h1 *ngIf="!persona">Loading...</h1>
+        <h1 *ngIf="persona">{{ name }} </h1>
+        <h1 *ngIf="about">{{ title }} </h1>
     </section>
 </main>

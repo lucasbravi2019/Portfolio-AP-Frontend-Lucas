@@ -20,4 +20,11 @@ export class ProjectComponent implements OnInit {
     return 'data:image/jpeg;base64,' + image
   }
 
+  getUrl(site: string) {
+    if (!site.includes('http://') || !site.includes('https://')) {
+      return `https://${site}`
+    }
+    return site
+  }
+
 }

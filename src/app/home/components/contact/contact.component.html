@@ -6,6 +6,8 @@
             <a [href]="getUrl(contact.contactValue)" target="_blank" rel="noopener noreferrer" *ngIf="isUrl(contact.contactValue)">Visit</a>
             <a [href]="'mailto:' + contact.contactValue" *ngIf="isMail(contact.contactValue)">Send Email</a>
             <a [href]="'tel:' + contact.contactValue" *ngIf="isTel(contact.contactValue)">Call</a>
+            <a class="github" [href]="getUrl(contact.contactValue)" *ngIf="isGithub(contact.contactValue)"><img src="../../../../assets/github.png" alt="">
+            </a>
         </div>
     </section>
 </section>

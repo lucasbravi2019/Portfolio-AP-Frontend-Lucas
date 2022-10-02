@@ -1,1 +1,43 @@
-<p>technology works!</p>
+<section>
+    <h3>Technologies: {{ technologyList?.length }}</h3>
+    <button (click)="createTechnology()">Create Technology</button>
+    <form [formGroup]="form" *ngIf="isEditing || isCreating">
+        <label for="technologyName">Technology Name</label>
+        <input type="text" placeholder="Java" formControlName="name">
+        <label for="technologyLevel">Technology Level</label>
+        <input type="number" min="0" max="100" placeholder="Technology Level" formControlName="level">
+        <label for="technologyImage">Technology Image</label>
+        <input type="file" (change)="uploadFile($event)">
+        <button *ngIf="isEditing" (click)="sendEdit()">Edit</button>
+        <button *ngIf="isCreating" (click)="sendCreation()">Create</button>
+        <button (click)="isEditing = false; isCreating = false">Cancel</button>
+    </form>
+    <table *ngIf="technologyList && technologyList.length > 0">
+        <tr>
+            <th>Technology Name</th>
+            <th>Technology Level</th>
+            <th>Technology Image</th>
+        </tr>
+        <tr *ngFor="let technology of technologyList">
+            <td>{{ technology.name }}</td>
+            <td>{{ technology.level }}</td>
+            <td><img [src]="getImage(technology.image)" alt=""></td>
+            <td>
+                <button (click)="editTechnology(technology)">Edit</button>
+                <button (click)="deleteTechnology(technology.id)">Delete</button>
+            </td>
+        </tr>
+    </table>
+</section>
+<section *ngIf="edited" class="success">
+    <p>Successfully edited!</p>
+</section>
+<section *ngIf="created" class="success">
+    <p>Successfully created!</p>
+</section>
+<section *ngIf="deleted" class="success">
+    <p>Successfully deleted!</p>
+</section>
+<section *ngIf="message" class="error">
+    <p>{{ message }}</p>
+</section>

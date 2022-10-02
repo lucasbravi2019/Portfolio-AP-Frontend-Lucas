@@ -23,7 +23,7 @@ export class LoginFormComponent implements OnInit {
   }
 
   login() {
-    this.service.login(this.form)
+    this.service.login(this.form.value)
   }
 
 }

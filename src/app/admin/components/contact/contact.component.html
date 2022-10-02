@@ -1,4 +1,6 @@
 <section>
+    <h3>Contacts: {{ contactList?.length }}</h3>
+    <button (click)="createContact()">Create Contact</button>
     <form [formGroup]="form" *ngIf="isEditing || isCreating">
         <label for="contactType">Contact Type</label>
         <input type="text" placeholder="Facebook" formControlName="contactType">
@@ -16,16 +18,19 @@
         <tr *ngFor="let contact of contactList">
             <td>{{ contact.contactType }}</td>
             <td>{{ contact.contactValue }}</td>
-            <button (click)="editContact(contact)">Edit</button>
-            <button (click)="deleteContact(contact.id)">Delete</button>
+            <td><button (click)="editContact(contact)">Edit</button></td>
+            <td><button (click)="deleteContact(contact.id)">Delete</button></td>
         </tr>
     </table>
 </section>
-<section *ngIf="edited" class="edition">
+<section *ngIf="edited" class="success">
     <p>Successfully edited!</p>
 </section>
-<section *ngIf="created" class="creation">
+<section *ngIf="created" class="success">
     <p>Successfully created!</p>
+</section>
+<section *ngIf="deleted" class="success">
+    <p>Successfully deleted!</p>
 </section>
 <section *ngIf="message" class="error">
     <p>{{ message }}</p>
