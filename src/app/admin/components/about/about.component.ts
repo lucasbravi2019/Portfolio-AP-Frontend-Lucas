@@ -70,6 +70,7 @@ export class AboutComponent implements OnInit {
           this.loginService.deslogear()
         }
         this.message = 'Edition failed. Please try again later.'
+        this.isEditing = false
         setTimeout(() => {
           this.message = null
         }, 3000);
