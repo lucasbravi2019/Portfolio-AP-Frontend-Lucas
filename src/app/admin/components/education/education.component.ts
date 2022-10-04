@@ -54,6 +54,12 @@ export class EducationComponent implements OnInit {
     this.form.patchValue({
       personaId: this.personaId
     })
+    this.scrollIntoView();
+  }
+
+  private scrollIntoView() {
+    const element = document.getElementById('educationForm');
+    element?.scrollIntoView({ behavior: 'smooth' });
   }
 
   editEducation(education: EducationResponse) {
@@ -68,6 +74,7 @@ export class EducationComponent implements OnInit {
       title: education.title
     })
     this.disableEndDate()
+    this.scrollIntoView()
   }
 
   deleteEducation(id: number) {

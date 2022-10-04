@@ -50,6 +50,12 @@ export class AboutComponent implements OnInit {
       aboutMsg: this.about?.aboutMsg,
       personaId: this.personaId,
     })
+    this.scrollToForm();
+  }
+
+  private scrollToForm() {
+    const formElement = document.getElementById('aboutForm');
+    formElement?.scrollIntoView({ behavior: 'smooth' });
   }
 
   sendEdit() {

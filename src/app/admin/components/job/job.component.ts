@@ -55,6 +55,12 @@ export class JobComponent implements OnInit {
     this.form.patchValue({
       personaId: this.personaId
     })
+    this.scrollIntoView();
+  }
+
+  private scrollIntoView() {
+    const element = document.getElementById('jobForm');
+    element?.scrollIntoView({ behavior: 'smooth' });
   }
 
   editJob(job: JobResponse) {
@@ -72,6 +78,7 @@ export class JobComponent implements OnInit {
       isPresent: job.endDate === '9999-09-09'
     })
     this.disableEndDate()
+    this.scrollIntoView()
   }
 
   deleteJob(id: number) {

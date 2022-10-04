@@ -1,5 +1,5 @@
 import { HttpErrorResponse } from '@angular/common/http';
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { PersonaBasica, PersonaRequest, PersonaResponse } from 'src/app/interfaces/persona';
 import { LoginService } from 'src/app/services/login.service';
@@ -38,6 +38,12 @@ export class PersonaComponent implements OnInit {
       lastName: this.persona?.lastName || '',
       id: this.persona?.id || 0
     })
+    this.scrollIntoView();
+  }
+
+  private scrollIntoView() {
+    const element = document.getElementById('personaForm');
+    element?.scrollIntoView({ behavior: 'smooth' });
   }
 
   sendEdit() {

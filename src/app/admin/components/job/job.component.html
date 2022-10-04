@@ -1,5 +1,5 @@
 <section>
-    <h3>Jobs: {{ jobList?.length }}</h3>
+    <h3 id="jobForm">Jobs: {{ jobList?.length }}</h3>
     <button (click)="createJob()">Create Job</button>
     <form [formGroup]="form" *ngIf="isEditing || isCreating">
         <label for="companyName">Company Name</label>

@@ -40,8 +40,6 @@ export class LoginFormComponent implements OnInit {
         this.router.navigate(['admin'])
       }
     })
-    
-    console.log(this.message);
   }
 
 }

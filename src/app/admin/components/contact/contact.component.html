@@ -1,5 +1,5 @@
 <section>
-    <h3>Contacts: {{ contactList?.length }}</h3>
+    <h3 id="contactForm">Contacts: {{ contactList?.length }}</h3>
     <button (click)="createContact()">Create Contact</button>
     <form [formGroup]="form" *ngIf="isEditing || isCreating">
         <label for="contactType">Contact Type</label>

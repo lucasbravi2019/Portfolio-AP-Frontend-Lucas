@@ -43,6 +43,12 @@ export class ContactComponent implements OnInit {
     this.form.patchValue({
       personaId: this.personaId
     })
+    this.scrollIntoView();
+  }
+
+  private scrollIntoView() {
+    const element = document.getElementById('contactForm');
+    element?.scrollIntoView({ behavior: 'smooth' });
   }
 
   editContact(contact: ContactResponse) {
@@ -54,6 +60,7 @@ export class ContactComponent implements OnInit {
       contactValue: contact.contactValue,
       personaId: this.personaId
     })
+    this.scrollIntoView()
   }
 
   deleteContact(id: number) {

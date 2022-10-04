@@ -1,5 +1,5 @@
 <section>
-    <h3>Technologies: {{ technologyList?.length }}</h3>
+    <h3 id="technologyForm">Technologies: {{ technologyList?.length }}</h3>
     <button (click)="createTechnology()">Create Technology</button>
     <form [formGroup]="form" *ngIf="isEditing || isCreating">
         <label for="technologyName">Technology Name</label>

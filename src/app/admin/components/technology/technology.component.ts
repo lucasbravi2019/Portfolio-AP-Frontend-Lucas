@@ -57,6 +57,12 @@ export class TechnologyComponent implements OnInit {
     this.form.patchValue({
       personaId: this.personaId
     })
+    this.scrollIntoView();
+  }
+
+  private scrollIntoView() {
+    const element = document.getElementById('technologyForm');
+    element?.scrollIntoView({ behavior: 'smooth' });
   }
 
   editTechnology(technology: TechnologyResponse) {
@@ -69,6 +75,7 @@ export class TechnologyComponent implements OnInit {
       name: technology.name,
       level: technology.level
     })
+    this.scrollIntoView()
   }
 
   deleteTechnology(id: number) {

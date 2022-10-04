@@ -48,6 +48,12 @@ export class ProjectComponent implements OnInit {
     this.form.patchValue({
       personaId: this.personaId
     })
+    this.scrollIntoView();
+  }
+
+  private scrollIntoView() {
+    const element = document.getElementById('projectForm');
+    element?.scrollIntoView({ behavior: 'smooth' });
   }
 
   editProject(project: ProjectResponse) {
@@ -62,6 +68,7 @@ export class ProjectComponent implements OnInit {
       technologyList: project.technologyList.map(technology => technology.id),
       site: project.site
     })
+    this.scrollIntoView()
   }
   
   getTechnologies(technologyList: TechnologyResponse[]) {

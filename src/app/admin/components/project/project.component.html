@@ -1,5 +1,5 @@
 <section>
-    <h3>Projects: {{ projectList?.length }}</h3>
+    <h3 id="projectForm">Projects: {{ projectList?.length }}</h3>
     <button (click)="createProject()">Create Project</button>
     <form [formGroup]="form" *ngIf="isEditing || isCreating">
         <label for="projectName">Project Name</label>

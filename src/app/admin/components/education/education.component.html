@@ -1,5 +1,5 @@
 <section>
-    <h3>Education: {{ educationList?.length }}</h3>
+    <h3 id="educationForm">Education: {{ educationList?.length }}</h3>
     <button (click)="createEducation()">Create Education</button>
     <form [formGroup]="form" *ngIf="isEditing || isCreating">
         <label for="institute">Institute</label>
