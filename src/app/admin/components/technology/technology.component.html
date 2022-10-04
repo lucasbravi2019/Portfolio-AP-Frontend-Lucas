@@ -21,7 +21,7 @@
         <tr *ngFor="let technology of technologyList">
             <td>{{ technology.name }}</td>
             <td>{{ technology.level }}</td>
-            <td><img [src]="getImage(technology.image)" alt=""></td>
+            <td><img [src]="getImage(technology.image)" alt="" *ngIf="technology.image"></td>
             <td>
                 <button (click)="editTechnology(technology)">Edit</button>
                 <button (click)="deleteTechnology(technology.id)">Delete</button>

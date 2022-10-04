@@ -1,8 +1,11 @@
-<app-persona [persona]="personaBasica" (updatePersona)="reload()"></app-persona>
-<app-about [about]="about" [personaId]="persona?.id" (updatePersona)="reload()"></app-about>
-<app-contact [contactList]="contactList" [personaId]="persona?.id" (updatePersona)="reload()"></app-contact>
-<app-education [educationList]="educationList" [personaId]="persona?.id" (updatePersona)="reload()"></app-education>
-<app-job [jobList]="jobList" [personaId]="persona?.id" (updatePersona)="reload()"></app-job>
-<app-technology [technologyList]="technologyList" [personaId]="persona?.id" (updatePersona)="reload()"></app-technology>
-<app-project [projectList]="projectList" [personaId]="persona?.id" [technologyList]="persona?.technologyList" (updatePersona)="reload()">
-</app-project>
+<h3 *ngIf="!persona">Loading...</h3>
+<app-persona [persona]="personaBasica" (updatePersona)="reload()" *ngIf="persona"></app-persona>
+<app-about [about]="about" [personaId]="persona.id" (updatePersona)="reload()" *ngIf="persona"></app-about>
+<app-contact [contactList]="contactList" [personaId]="persona.id" (updatePersona)="reload()" *ngIf="persona">
+</app-contact>
+<app-education [educationList]="educationList" [personaId]="persona.id" (updatePersona)="reload()" *ngIf="persona">
+</app-education>
+<app-job [jobList]="jobList" [personaId]="persona.id" (updatePersona)="reload()" *ngIf="persona"></app-job>
+<app-technology [technologyList]="technologyList" [personaId]="persona.id" (updatePersona)="reload()" *ngIf="persona">
+</app-technology>
+<app-project [projectList]="projectList" [personaId]="persona.id" [technologyList]="persona.technologyList" (updatePersona)="reload()" *ngIf="persona"></app-project>
